@@ -19,7 +19,7 @@ Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và c
 
 Nói ngắn gọn:
 
-IEnumerable / IQueryable → ToList() → List<T>
+IEnumerable <T> / IQueryable <T> . ToList()   < = > List<T>
 
 Ví dụ:
 
