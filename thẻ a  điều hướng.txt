@@ -6,3 +6,5 @@ thẻ  <a asp-action="Edit" asp-route-id="@item.ItemId" asp  = "Item" >Edit</a> 
 
 ...   một  số  thẻ khác điểu hướng cũng giống thẻ   <a> 
 
+
+
