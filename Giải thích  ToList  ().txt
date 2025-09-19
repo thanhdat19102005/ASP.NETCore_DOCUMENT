@@ -1,0 +1,18 @@
+Giải thích  ToList  ()  
+
+ToList() sẽ chuyển một tập hợp (collection) đang ở dạng IEnumerable<T> hoặc IQueryable<T> thành một List<T> (danh sách).
+
+Nói ngắn gọn:
+
+IEnumerable / IQueryable → ToList() → List<T>
+
+Ví dụ:
+
+var numbers = new int[] { 1, 2, 3 };   // mảng
+var list = numbers.ToList();           // chuyển thành List<int>
+
+
+Hay với EF Core:    lấy  DbSet trong DbContext  chuyển thành  List  <T> 
+
+var query = _context.Items.Where(x => x.Price > 100); // IQueryable<Item>
+var list = query.ToList(); // List<Item>
