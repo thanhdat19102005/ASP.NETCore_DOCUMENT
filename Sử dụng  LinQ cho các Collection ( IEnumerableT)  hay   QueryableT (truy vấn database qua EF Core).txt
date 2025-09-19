@@ -1,0 +1,57 @@
+Sử dụng  LinQ cho các Collection ( IEnumerable<T>)  hay   Queryable<T> (truy vấn database qua EF Core) 
+
+giải thích    IEnumerable<T>  và   Queryable<T>    : 
+
+
+IEnumerable<T> 👉 thường dùng khi dữ liệu đã nằm trong bộ nhớ (RAM), ví dụ: List, Array, HashSet… hoặc khi bạn đã .ToList() / .ToArray() từ database rồi.
+
+Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>   lọc ở Ram
+
+IQueryable<T> 👉 thường dùng khi dữ liệu nằm trong database (qua DbSet<T> trong Entity Framework, LINQ to SQL…).
+
+Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và chạy trực tiếp trên Database   => lọc ở database 
+
+=>  Collection ( IEnumerable<T>)  kết hợp với Where  kiểu dữ liệu trả vể  IEnumerable<T>
+=>     Queryable<T>   kết hợp với Where kiểu dữ liệu trả về   Queryable<T>  
+
+
+
+ 
+Ví dụ :      
+
+  List<int> numbers = new List<int> { 1, 2, 3, 5,10 };
+
+  int result = numbers.FirstOrDefault(n => n > 1);
+   
+ý  nghĩa  :  
+ Duyệt qua từng phần tử trong Collection n sẽ đại diện cho từng phần tử trong Collection rồi gán lại n  so sánh  với điều kiện  nếu hợp  lệ  thì  sẽ break;
+  
+nếu  duyệt hết mà  không thỏa mãn điều kiện thì  trả về  Nếu không có phần tử nào thì trả về giá trị mặc định (default).
+•	Với kiểu tham chiếu (class, object) → null.
+•	Với kiểu số (int, double, …) → 0.
+•	Với bool → false.
+
+
+
+
+Phương thức	Ví dụ	Kết quả
+Where()	numbers.Where(n => n > 1)	Lọc các số > 1
+Count()	numbers.Count(n => n > 1)	Đếm số lượng số > 1
+Any()	numbers.Any(n => n > 1)	Kiểm tra có số nào > 1 không  return  (bool)
+All()	numbers.All(n => n > 1)	Kiểm tra tất cả số > 1 không return  (bool)
+First()	numbers.First(n => n > 1)	Lấy số đầu tiên > 1
+Select()numbers.Select(n => n * 2)	Biến đổi mỗi số (nhân đôi)
+
+
+
+  
+  
+
+  
+
+     
+ 
+
+
+
+
