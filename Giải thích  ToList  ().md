@@ -10,7 +10,7 @@ IEnumerable<T> 👉 thường dùng khi dữ liệu đã nằm trong bộ nhớ 
 
 Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>   lọc ở Ram
 
-IQueryable<T> 👉 thường dùng khi dữ liệu nằm trong database (qua DbSet<T> trong Entity Framework, LINQ to SQL…).
+IQueryable<T> 👉 thường dùng khi dữ liệu nằm trong database (qua DbSet<T> trong Entity Framework).
 
 Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và chạy trực tiếp trên Database   => lọc ở database 
 
