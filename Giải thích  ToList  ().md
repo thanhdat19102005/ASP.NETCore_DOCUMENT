@@ -3,6 +3,20 @@ Giải thích  ToList  ()
 
 ToList() sẽ chuyển một tập hợp (collection) đang ở dạng IEnumerable<T> hoặc IQueryable<T> thành một List<T> (danh sách).
 
+giải thích    IEnumerable<T>  và   Queryable<T>    : 
+
+
+IEnumerable<T> 👉 thường dùng khi dữ liệu đã nằm trong bộ nhớ (RAM), ví dụ: List, Array, HashSet… hoặc khi bạn đã .ToList() / .ToArray() từ database rồi.
+
+Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>   lọc ở Ram
+
+IQueryable<T> 👉 thường dùng khi dữ liệu nằm trong database (qua DbSet<T> trong Entity Framework, LINQ to SQL…).
+
+Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và chạy trực tiếp trên Database   => lọc ở database 
+
+
+
+
 Nói ngắn gọn:
 
 IEnumerable / IQueryable → ToList() → List<T>
