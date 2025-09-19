@@ -14,7 +14,7 @@ Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và c
 =>  Collection ( IEnumerable<T>)  kết hợp với  [ select , where]   kiểu dữ liệu trả vể  IEnumerable<T>
 =>     Queryable<T>   kết hợp với [ select , where] kiểu dữ liệu trả về   Queryable<T>  
 
-
+=>   T generic  kiểu dữ liểu tổng quát  
 
  
 Ví dụ :      
