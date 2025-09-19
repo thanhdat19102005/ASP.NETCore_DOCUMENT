@@ -20,7 +20,7 @@ var list = query.ToList(); // List<Item>
 
 
 
-
+--------------------------------------------------------------------------------------------
 
 
 Những "hình dáng cụ thể" của IEnumerable<T> trong .NET:
