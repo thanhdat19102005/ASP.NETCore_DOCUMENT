@@ -27,9 +27,6 @@ IQueryable<T>   <=>   DbSet  <T>
 
 
 
-
-
-
 Nói ngắn gọn:
 
 IEnumerable <T> / IQueryable <T> . ToList()   < = > List<T>
