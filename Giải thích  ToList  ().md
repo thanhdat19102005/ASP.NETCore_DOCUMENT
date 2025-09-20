@@ -15,6 +15,19 @@ IQueryable<T> 👉 thường dùng khi dữ liệu nằm trong database (qua DbS
 Các câu lệnh LINQ (Where, Select, Count, …) được dịch sang SQL và chạy trực tiếp trên Database   => lọc ở database 
 
 
+IEnumerable <T>  <=>   List  <T>   ,  HashSet<T> ,  Dictionary<TKey, TValue>  ,  Queue<T>  , Stack<T>  .... 
+
+
+
+IQueryable<T>   <=>   DbSet  <T>   
+
+
+  
+
+
+
+
+
 
 
 Nói ngắn gọn:
