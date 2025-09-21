@@ -1,0 +1,66 @@
+📋 Bảng dữ liệu: Items
+ItemId	Name	Category	Price
+1	Bút	Văn phòng	500
+2	Vở	Văn phòng	2000
+3	Thước	Văn phòng	1500
+4	Áo	Thời trang	3000
+5	Quần	Thời trang	4000
+6	Mũ	Thời trang	800
+7	Giày	Thời trang	2500
+📌 Yêu cầu:
+
+Lấy các nhóm Category có giá > 1000 (lọc bản ghi trước).
+
+Gom nhóm theo Category.
+
+Chỉ lấy nhóm có từ 2 sản phẩm trở lên (lọc nhóm sau).
+
+Xuất Category + số lượng sản phẩm.
+
+🔹 SQL
+SELECT Category, COUNT(*) AS SoLuong
+FROM Items
+WHERE Price > 1000              -- Lọc bản ghi (WHERE)
+GROUP BY Category                -- Gom nhóm
+HAVING COUNT(*) >= 2             -- Lọc nhóm (HAVING)
+ORDER BY SoLuong DESC;           -- Sắp xếp
+
+🔹 LINQ Method Syntax
+var query = Items
+    .Where(item => item.Price > 1000)              // WHERE
+    .GroupBy(item => item.Category)                // GROUP BY
+    .Where(g => g.Count() >= 2)                    // HAVING
+    .OrderByDescending(g => g.Count())             // ORDER BY
+    .Select(g => new { Category = g.Key, Count = g.Count() }); // SELECT lấy  gia  những cột mình  muốn
+
+📊 Thực hiện từng bước
+Bước 1: WHERE Price > 1000
+ItemId	Name	Category	Price
+2	Vở	Văn phòng	2000
+3	Thước	Văn phòng	1500
+4	Áo	Thời trang	3000
+5	Quần	Thời trang	4000
+7	Giày	Thời trang	2500
+Bước 2: GROUP BY Category
+
+Văn phòng → {Vở, Thước}
+
+Thời trang → {Áo, Quần, Giày}
+
+Bước 3: HAVING COUNT >= 2
+Category	Count
+Văn phòng	2
+Thời trang	3
+Bước 4: ORDER BY Count DESC
+Category	Count
+Thời trang	3
+Văn phòng	2
+
+
+✅ Kết quả cuối cùng giống nhau ở SQL và LINQ.
+
+
+
+
+
+
