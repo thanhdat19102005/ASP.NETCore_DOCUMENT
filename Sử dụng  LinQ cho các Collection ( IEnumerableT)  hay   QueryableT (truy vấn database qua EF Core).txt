@@ -44,9 +44,9 @@ First()	numbers.First(n => n > 1)   ||   numbers.FirstOrDefaul(n => n > 1)   L�
 Select()numbers.Select(n => n * 2)	Biến đổi mỗi số (nhân đôi)
 
 Sum()	                           numbers.Sum(n => n)	Tổng các giá trị
-Average()	                   numbers.Average(n => n)	Trung bình cộng
-OrderBy()	                   numbers.OrderBy(n => n)	Sắp xếp tăng dần
-OrderByDescending()	           numbers.OrderByDescending(n => n)	Sắp xếp giảm dần
+Average()	                   numbers.Average(n => n)	Trung bình cộng theo n
+OrderBy()	                   numbers.OrderBy(n => n)	Sắp xếp tăng dần theo  n
+OrderByDescending()	           numbers.OrderByDescending(n => n)	Sắp xếp giảm dần theo n
  
   
 
