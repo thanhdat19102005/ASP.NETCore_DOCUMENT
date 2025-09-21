@@ -2,9 +2,9 @@ Sử dụng  LinQ cho các Collection ( IEnumerable<T>)  hay   Queryable<T> (tru
 
 giải thích    IEnumerable<T>  và   Queryable<T>  và  LINQ  : 
 
-LINQ  :  giống như viết SQL nhưng với cú pháp của C#.
+LINQ  :  giống như viết SQL nhưng với cú pháp của C#. và có thể kết hợp với điều kiện  lamda  ví   list <int >   contain  = {2,3,2,4}; IEnumerable<int> =  contain.FirstOrDefault (n =>n>2)   
 
-IEnumerable<T> 👉   tập hợp chứa các phần tử thật sự trong bộ nhớ.Thường dùng khi dữ liệu đã nằm trong bộ nhớ (RAM) .Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>     Load  ở  Ram 
+IEnumerable<T> 👉   tập hợp chứa các phần tử T thật sự trong bộ nhớ.Thường dùng khi dữ liệu đã nằm trong bộ nhớ (RAM) .Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>     Load  ở  Ram 
 
 IQueryable<T> 👉    biểu diễn tập hợp các phần tử T, nhưng không lưu dữ liệu thực tế.Thường dùng khi dữ liệu nằm trong database (qua DbSet<T> trong Entity Framework)  ,
 
@@ -24,7 +24,7 @@ Ví dụ :
 
   int result = numbers.FirstOrDefault(n => n > 1);
    
-ý  nghĩa  :  
+ý  nghĩa  :  n => n > 1   
  Duyệt qua từng phần tử trong Collection n sẽ đại diện cho từng phần tử trong Collection rồi gán lại n  so sánh  với điều kiện  nếu hợp  lệ  thì lấy
   
 nếu  duyệt hết mà  không thỏa mãn điều kiện thì  trả về  Nếu không có phần tử nào thì trả về giá trị mặc định (default).
