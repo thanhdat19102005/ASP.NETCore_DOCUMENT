@@ -1,3 +1,7 @@
+ 
+
+ 1.  IQueryable<T>
+
 📋 Bảng dữ liệu: Items
 ItemId	Name	Category	Price
 1	Bút	Văn phòng	500
@@ -31,7 +35,7 @@ var query = Items
     .GroupBy(item => item.Category)                // GROUP BY
     .Where(g => g.Count() >= 2)                    // HAVING
     .OrderByDescending(g => g.Count())             // ORDER BY
-    .Select(g => new { Category = g.Key, Count = g.Count() }); // SELECT lấy  gia  những cột mình  muốn
+    .Select(g => new { Category = g.Key, Count = g.Count() }); // SELECT lấy  ra  những cột mình  muốn và tạo thành Object mới 
 
 📊 Thực hiện từng bước
 Bước 1: WHERE Price > 1000
@@ -58,6 +62,33 @@ Văn phòng	2
 
 
 ✅ Kết quả cuối cùng giống nhau ở SQL và LINQ.
+
+
+
+2.  IEnumerable<T> 
+
+
+List<Item> collection = new List<Item> {
+    new Item { Name = "Bút", Category = "Văn phòng", Price = 500 },
+    new Item { Name = "Áo", Category = "Thời trang", Price = 3000 }
+};
+
+
+
+collection
+    .Join(otherCollection, ...)              
+    .Where(item => item.Price > 1000)        
+    .GroupBy(item => item.Category)          
+    .Where(g => g.Count() > 2)               
+    .OrderByDescending(g => g.Key)           
+    .Select(g => new { Category = g.Key, Count = g.Count() }) SELECT lấy  ra  những cột mình  muốn và tạo thành Object mới 
+
+    .Take(10);
+
+
+
+
+
 
 
 
