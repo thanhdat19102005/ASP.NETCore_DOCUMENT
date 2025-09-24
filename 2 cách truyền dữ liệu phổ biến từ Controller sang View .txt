@@ -1,0 +1,28 @@
+2 cách truyền dữ liệu phổ biến từ Controller sang  View 
+
+
+
+1. return View(model) - Truyền Model                                               bên  View   
+public class HomeController : Controller                                         @model.namespace.Models.Person
+{
+    public IActionResult Index()
+    {
+        var person = new Person { Name = "John", Age = 25 };                    when using    @model.thuộc tính
+                                                                                khi  có  duyệt  foreach    (var  item  in  Model) 
+        
+        // Cách 1: Truyền model object
+        return View(person); // Person là model
+    }
+}
+
+
+
+2. ViewData - Truyền qua Dictionary                                                @ViewBag.Name 
+
+public IActionResult Index()                                                       @ViewBag.Age 
+{
+    ViewData["Name"] = "John";
+    ViewData["Age"] = 25; 
+    ViewData ["Key"]   =   new List  <int >  {2,3,4,5}
+    return View(); // Vẫn return View()                                         khi  duyêt   foreach   (var item  in  ViewBag.Key)
+}
