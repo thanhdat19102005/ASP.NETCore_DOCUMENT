@@ -1,5 +1,5 @@
 
-thẻ  <a asp-action="Edit" asp-route-id="@item.ItemId" asp  = "Item" >Edit</a> </td>
+thẻ  <a asp-action="Edit" asp-route-Slug="@item.ItemId" asp-Controller = "Item"   >Edit</a> </td>
 
 điều hướng tới  Controller/Action/Id
 
