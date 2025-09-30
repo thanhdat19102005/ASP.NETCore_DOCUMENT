@@ -8,3 +8,9 @@ thẻ  <a asp-action="Edit" asp-route-Slug="@item.ItemId" asp-Controller = "Item
 
 
 
+
+public IActionResult Detail(int id) { ... }        // khi dùng asp-route-id
+public IActionResult Detail(string slug) { ... }   // khi dùng asp-route-slug
+
+
+
