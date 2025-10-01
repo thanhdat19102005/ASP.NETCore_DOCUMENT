@@ -1,0 +1,36 @@
+﻿ @model   List<TestProject.Models.Student_Course>
+
+@{
+    ViewData["Title"] = "Index";
+  
+}
+
+<h3>Index</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>StudentId</th>
+            <th>Name</th>
+            <th>Subject  </th>
+             
+
+        </tr>
+    </thead>
+    <tbody>
+        
+      @foreach (var item in Model)
+{
+    <tr>
+        <td>@item.StudentId</td>
+                <td>@item.Student?.Name </td>
+        <td>
+                    @item.Course?.Name
+        </td>
+    </tr>
+}
+
+
+    </tbody>
+
+</table>
