@@ -1,0 +1,6 @@
+  
+(Action, Controller, RouteValues)
+1 . RedirectToAction("Index"  ,"Cart") :  nghĩa là   di chuyển tới  action = Index và  Controller =  Cart  
+2.  RedirectToAction("Index")    :  không cần ghi Controller   vì  asp.net mvc  tự động điện  dựa vào  Controller đang chứa đoạn mã này      
+
+
