@@ -1,0 +1,30 @@
+Bước đi của user
+
+User đang ở Trang A → bấm nút Xóa sản phẩm → gửi request đến Trang B.
+
+Controller xử lý xong action Delete(int id).
+
+Trong action Delete có lệnh:
+
+return Redirect(Request.Headers["Referer"].ToString());
+
+
+Request.Headers["Referer"] → chứa URL /Products/Index (trang trước user vừa từ đó tới Delete).
+
+Redirect(url) → gửi user quay lại /Products/Index.
+
+🔹 Sơ đồ minh họa  
+User -> [Trang A /Products/Index]   ||  Controller/Action 
+         bấm nút Delete
+         |
+         v
+       [Trang B /Products/Delete/5] -> Xử lý xong -> Redirect -> /Products/Index
+         |
+         v
+       [Quay lại Trang A /Products/Index]
+
+2️⃣ Trường hợp đặc biệt
+
+Nếu user truy cập trực tiếp Trang B bằng URL /Products/Delete/5 (không bấm từ Trang A)
+→ Referer có thể null
+→ Redirect về Request.Headers["Referer"] sẽ lỗi nếu không kiểm tra.
