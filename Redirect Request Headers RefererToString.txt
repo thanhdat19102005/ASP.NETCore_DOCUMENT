@@ -28,3 +28,6 @@ User -> [Trang A /Products/Index]   ||  Controller/Action
 Nếu user truy cập trực tiếp Trang B bằng URL /Products/Delete/5 (không bấm từ Trang A)
 → Referer có thể null
 → Redirect về Request.Headers["Referer"] sẽ lỗi nếu không kiểm tra.
+
+cú  pháp:  
+ return Redirect(Request.Headers["Referer"].ToString());
