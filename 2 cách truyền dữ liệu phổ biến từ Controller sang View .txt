@@ -2,7 +2,8 @@
 
 
 
-1. return View(model) - Truyền Model                                               bên  View   
+1. Truyền Model 
+   ====>  Model  sử  dụng cho return  View                                       bên  View   
 public class HomeController : Controller                                         @model.namespace.Models.Person
 {
     public IActionResult Index()
@@ -26,3 +27,77 @@ public IActionResult Index()                                                    
     ViewData ["Key"]   =   new List  <int >  {2,3,4,5}
     return View(); // Vẫn return View()                                         khi  duyêt   foreach   (var item  in  ViewBag.Key)
 }
+
+======>  ViewData sử  dụng cho return  View  
+ 
+public IActionResult Edit(int id)
+{
+    var product = _context.Products.Find(id);
+    if (product == null)
+    {
+        ViewBag.Error = "Không tìm thấy sản phẩm!";
+        return View(); // ViewBag sẽ hiển thị bình thường
+    }
+
+    ViewBag.Title = "Chỉnh sửa sản phẩm";
+    return View(product);
+}
+
+
+===============>    ViewData[key]  và   Model   sử  dụng  trong   View (I)   do  chính  Controller/Action  chứa  [ ViewData[key]  và   Model ] đó 
+
+trả về  View (I)
+
+
+3  .  TempData [Key]   sử dụng   return   RedictToAction  hay  return Redirect(Request.Headers["Referer"].ToString());
+  
+
+====>   nếu ViewData[key]   và  TempData [key]  chưa gán   thì   == null  
+   
+
+// Controller
+public class ProductController : Controller
+{
+    // POST: Tạo sản phẩm
+    [HttpPost]
+    public ActionResult Create(Product product)
+    {
+        if (ModelState.IsValid)
+        {
+            // Lưu vào database
+            _db.Products.Add(product);
+            _db.SaveChanges();
+            
+            // QUAN TRỌNG: Dùng TempData trước khi Redirect
+            TempData["SuccessMessage"] = "✅ Sản phẩm đã được tạo thành công!";
+            TempData["ProductName"] = product.Name;
+            
+            return RedirectToAction("Index"); // Chuyển hướng
+        }
+        
+        // Nếu có lỗi, dùng ViewBag (vì không Redirect)
+        ViewBag.Error = "Vui lòng sửa lỗi validation";
+        return View(product);
+    }
+    
+    // GET: Hiển thị danh sách
+    public ActionResult Index()
+    {
+        // NHẬN dữ liệu từ TempData sau khi Redirect
+        if (TempData["SuccessMessage"] != null)
+        {
+            ViewBag.SuccessMessage = TempData["SuccessMessage"];
+            ViewBag.ProductName = TempData["ProductName"];
+        }
+        
+        var products = _db.Products.ToList();
+        return View(products);
+    }
+}
+
+
+
+
+
+
+
