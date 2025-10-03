@@ -24,8 +24,7 @@ Ví dụ :
 
   int result = numbers.FirstOrDefault(n => n > 1);
    
-ý  nghĩa biểu thức  lamda :  n => n > 1   
- Duyệt qua từng phần tử trong Collection n sẽ đại diện cho từng phần tử trong Collection rồi gán lại n  so sánh  với điều kiện  nếu hợp  lệ  thì lấy
+ý  nghĩa Lambda = điều kiện / công thức xử lý mà LINQ dùng cho từng phần tử.
   
 nếu  duyệt hết mà  không thỏa mãn điều kiện thì  trả về  Nếu không có phần tử nào thì trả về giá trị mặc định (default).
 •	Với kiểu tham chiếu (class, object) → null.
