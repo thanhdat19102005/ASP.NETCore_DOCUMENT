@@ -24,7 +24,7 @@ Ví dụ :
 
   int result = numbers.FirstOrDefault(n => n > 1);
    
-ý  nghĩa Lambda = điều kiện / công thức xử lý mà LINQ dùng cho từng phần tử.
+*** ý  nghĩa Lambda = điều kiện / công thức xử lý mà LINQ dùng cho từng phần tử.
   
 nếu  duyệt hết mà  không thỏa mãn điều kiện thì  trả về  Nếu không có phần tử nào thì trả về giá trị mặc định (default).
 •	Với kiểu tham chiếu (class, object) → null.
