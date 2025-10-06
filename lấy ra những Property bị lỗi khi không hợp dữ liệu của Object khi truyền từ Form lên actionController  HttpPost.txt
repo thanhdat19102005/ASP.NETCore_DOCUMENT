@@ -1,0 +1,30 @@
+
+   
+   List  <string>   errors   = new  List  <string>  () 
+
+// lấy ra những Property bị lỗi khi không hợp dữ liệu của Object khi truyền từ Form lên action/Controller  [HttpPost] 
+foreach (var value in ModelState.Values)
+{
+    foreach (var error in value.Errors)
+    {
+          errors.Add(error) 
+    }
+}
+
+// lấy ra những Property bị lỗi khi không hợp dữ liệu của Object khi truyền từ Form lên action/Controller  [HttpPost] 
+foreach (var value in ModelState.Values)
+{
+    foreach (var error in value.Errors)
+    {
+          errors.Add(error) 
+    }
+}
+
+
+
+
+-----------------------------------------------------------------------
+chuyển  List <string>  A  thành String   B  
+
+ 
+string  B    =  String  .join ("\n",A)
