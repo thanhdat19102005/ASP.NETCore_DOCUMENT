@@ -11,15 +11,6 @@ foreach (var value in ModelState.Values)
     }
 }
 
-// lấy ra những Property bị lỗi khi không hợp dữ liệu của Object khi truyền từ Form lên action/Controller  [HttpPost] 
-foreach (var value in ModelState.Values)
-{
-    foreach (var error in value.Errors)
-    {
-          errors.Add(error) 
-    }
-}
-
 
 
 
