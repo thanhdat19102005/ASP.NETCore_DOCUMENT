@@ -1,0 +1,4 @@
+trong   MVC những  file  css  /image/   js trong wwwroot đã  viết sãng  rồi  chỉ  cần có  đường dẫn  và  gọi  là có thể sử dụng  được  
+
+
+ 
