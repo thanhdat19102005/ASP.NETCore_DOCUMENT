@@ -1,0 +1,7 @@
+phần biệt session Storage và cookie 
+
++ Session Storage : tồn tại trong  browser nếu tắt browser thì  toàn bộ dữ liệu trong session Storage sẽ mất hết ,session  storage  trong cùng browser được tách biệt bởi các  Tab khác nhau tức là session Storage ở các Tab  khác  nhau thì nó  sẽ  không liên quan tới nhau  
+
+
++ Persistent Cookie (cookie lâu dài) là loại cookie được lưu trên ổ cứng máy tính, và vẫn còn tồn tại sau khi bạn tắt rồi mở lại trình duyệt.
+programmer có  thể setting  thời gian sống cookie   
