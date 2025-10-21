@@ -1,0 +1,2 @@
++  Trong Web  Client (trình duyệt)   còn   server  là Program  
++ Địa chỉ đến server = http://localhost:5198 
