@@ -1,0 +1,31 @@
+
+ *  các  câu  lệnh cơ bản  làm việc với thư  mục 
+ + cd  :   cd "C:\Users\PC\Documents"
+
+Nhưng PowerShell bây giờ đang “đứng” trong thư mục Documents, nghĩa là nếu bạn gõ tiếp dir thì nó sẽ liệt kê các file trong Documents.
+
++  dir :  dùng để liệt kê các file và thư mục có trong thư mục hiện tại
+
+
+Tóm lại:
+
+cd → đổi chỗ đứng.
+
+dir → liệt kê những gì có trong chỗ đó.
+
+
+
++  di chuyển file  từ chổ này sang chổ khác  
+
+=>  Move-Item "C:\Users\PC\Documents\Zalo Received Files\background.jpg" "C:\Users\PC\Documents\Zalo Received Files\Ielts\background.jpg"
+
+
++ vd  C:\Users\PC\a  :  đường  dẫn   thu  mục  hiện tại  
+
+
+
+
+
+
+
+

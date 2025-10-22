@@ -1,0 +1,131 @@
+1. Docker giúp ta chạy project
+
+Docker giống như cái hộp đóng gói sẵn môi trường.
+
+Khi bạn docker run thì project chạy luôn → không cần cài .NET, NodeJS, database trên máy bạn.
+
+Nhưng khi chạy trong Docker, code của bạn giống như đang bị “đóng hộp”, bạn chỉ nhìn thấy app hoạt động chứ không hẳn sửa trực tiếp trong đó.
+
+👉  Đúng: Docker chủ yếu để chạy project một cách đồng nhất.
+
+🔹 2. Muốn sửa code thì sao?
+
+Có 2 trường hợp:
+
+(A) Chỉ muốn chạy để xem kết quả
+
+Không cần cài gì ngoài Docker.
+
+Chỉ cần lấy image/container là chạy được.
+
+(B) Muốn sửa code
+
+Thường sẽ clone code qua Git.
+
+Lập trình viên cần có IDE (Visual Studio, VS Code, Rider…) và cài framework (C#, NodeJS, Java, …) đúng version để build lại.
+
+👉   Vì Docker không phải IDE, nó chỉ giúp chạy, không phải để code/debug trực tiếp.
+
+🔹 3. Kết hợp cả Git và Docker trong team
+
+Git → để share source code cho team cùng sửa.
+
+Docker → để chạy thử code trên môi trường giống nhau (test, demo, deploy).
+
+Cách làm thực tế:
+
+Dev clone code từ Git.
+
+Muốn sửa code → mở IDE trên máy, cần cài version phù hợp.
+
+Muốn chạy thử nhanh (môi trường chuẩn) → dùng Docker build & run.
+
+👉 Tóm lại:
+
+Git: để share code, làm việc nhóm.
+
+README.md + file config (package.json, .csproj, …): để note version cho team cài.
+
+Muốn sửa code → phải cài môi trường dev (cài .NET, NodeJS, database, IDE…) → vì Docker không phải là IDE.
+
+👀 Muốn chỉ chạy/xem project (test, chạy demo, deploy lên server) → dùng Docker → không cần cài framework gì hết.
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+
+[Dockerfile → build → Docker Image → run → Docker Container]
+
+
+1️⃣ Dockerfile
+
+Là file hướng dẫn: viết các bước để cài đặt dự án, thư viện, môi trường.
+
+Chỉ là “công thức”, chưa chạy gì cả.
+
+2️⃣ Docker Image  
+
+Là bản dựng sẵn từ Dockerfile.
+
+Chứa toàn bộ dự án + môi trường  +  thư  viên     nói   chung  tất  cả  mọi thứ   và  sau đó   đóng gói  lại  
+
+Chưa chạy, nhưng có thể chia sẻ cho người khác.
+
+Khi muốn chạy dự án ở máy khác → dùng image để tạo container.
+
+3️⃣ Docker Container
+
+Là instance đang chạy từ image.
+
+Nó giống như máy ảo nhỏ, chạy được dự án.
+
+Thường không chia sẻ container trực tiếp, vì nó chứa trạng thái riêng (file log, dữ liệu tạm).
+
+✅ Tóm tắt ngắn gọn
+
+Dockerfile → tạo công thức
+
+Docker Image → đóng gói dự án + môi trường → có thể chia sẻ
+
+Docker Container → chạy dự án từ image → dùng thử, test
+
+
+
+
+
+
+Docker dùng để đóng gói môi trường và chạy dự án
+
+Khi chia sẻ dự án qua Docker, mục tiêu thường là người khác chạy thử, deploy, hoặc test mà không lo cài đặt thư viện, cấu hình…
+
+Source code là thứ phụ, không phải mục đích chính.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

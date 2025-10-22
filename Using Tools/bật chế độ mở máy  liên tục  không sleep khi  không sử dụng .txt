@@ -1,0 +1,1 @@
+Trên máy tính A (máy chủ), nhấn phím Windows + R, gõ powercfg.cpl và nhấn Enter.
