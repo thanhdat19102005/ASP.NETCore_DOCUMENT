@@ -1,0 +1,3 @@
+CategoryModel apple = new CategoryModel { Name = "Apple", Slug = "Apple", Description = "Apple is  large brand in the world", Status = 1 };
+
+ cú pháp  tắt truyền  dữ liệu  cho  Object  kiểu dữ  liệu  tham chiếu  

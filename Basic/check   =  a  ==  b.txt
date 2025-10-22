@@ -1,0 +1,5 @@
+ví  dụ   ta có  boolean   check   =false ;
+  
+    int  a   =  3;
+    int  b   =3;
+    check   =   a  ==  b    //   ý  nghĩa    nếu  a  == b  thì   gán true   cho  check   và  ngược  lại 

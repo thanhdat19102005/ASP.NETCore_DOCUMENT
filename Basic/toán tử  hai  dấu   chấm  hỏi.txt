@@ -1,0 +1,37 @@
+
+
+
+  *** toán tử  hai  dấu   chấm  hỏi   
+    var  item  =    A ??  B : nghĩa  là  nếu bên trái == Null ( A )   thì lấy bên phải (B)   
+
+  ==>   hai nhánh của ?? phải cùng kiểu (hoặc có thể chuyển đổi về cùng kiểu)  tức A  và  B   phải cùng kiểu dữ  liệu 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+    public class Person {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public  Person   Result() {
+
+            return null;
+        }
+
+       
+      
+
+    }
+    class Program {
+        static void Main(string[] args) {
+           
+            Person p =   new Person ();
+
+             var  item = p.Result() ?? new Person();  //      p.Result ()  và new Person()  phải có  cùng  kiểu  dữ liệu  là  Person  
+
+            item.Name  = "Hoang";
+            item.Age   =  12;
+            
+
+        }
+    }
+
+}

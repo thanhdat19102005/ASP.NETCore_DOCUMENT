@@ -1,0 +1,4 @@
+Với kiểu cơ bản  nguyên  thủy, enum, string →( == )   ≈ Equals().  => nó so sánh giá trị 
+
+Với class object → (==)    ≈  Object.ReferenceEquals(object objA, object objB) (return true or false) :   so sánh tham chiếu
+=>  nó  so sánh tham chiếu địa chỉ 

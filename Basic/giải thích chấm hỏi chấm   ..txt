@@ -1,0 +1,18 @@
+giải thích  ?.   
+
+=>   Kiểm tra [ biến kiểu dữ liệu]   đó  có  đang bị Null không nếu không null mới truy cập  còn nếu  null  thì  không truy cập vì vậy sẽ không lỗi   
+
+VD     event   EnventHandler    action    =  null     =>   action  ?.  Invoke ()   //  kiểm tra action có  bị null  không  
+ 
+     SinhVien   {
+      public  int age ;
+      public  string  Name ;          
+ 
+     }  
+
+
+SinhVien  sv  = new   SinhVien ();
+sv?. age  //   kiểm tra  sv   có bị  null  không 
+
+
+

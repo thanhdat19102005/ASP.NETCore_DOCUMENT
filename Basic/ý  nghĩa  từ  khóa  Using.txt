@@ -1,0 +1,1 @@
+using MyWeb.Models; nghĩa là: “Tôi sẽ dùng các class nằm trong namespace MyWeb.Models trong file này.”

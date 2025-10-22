@@ -1,0 +1,37 @@
+ *các cách ghi truyền dữ  liệu  vào field/Property của Object (instance)  
+
+public class Person {
+     public string Name { get; set; }
+     public int Age { get; set; }
+
+    public  Person(string name, int age) {
+         Name = name;
+         Age = age;
+     }
+     public  Person() {
+         
+     }
+
+
+ }
+ class Program {
+     static void Main(string[] args) {
+
+         // cách1    
+         Person   people  = new  Person ()  ;
+         people .Name  = "Ln"
+         people .Age = 19;
+------------------------------------------
+         //cách2  
+         Person  people = new  Person  {Name = "Ln" ,  Age = 18}; 
+
+--------------------------------------------
+         // cách3  dùng constructor
+         Person people = new Person("hoang" , 18);
+
+        Console.WriteLine($"Name: {people.Name}, Age: {people.Age}");
+
+
+
+     }
+ }

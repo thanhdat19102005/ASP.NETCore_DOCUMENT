@@ -1,0 +1,81 @@
+ *truy cập kiểu dữ liệu tham chiếu (reference type)  [../class  + ten]  lồng  nhau   hoặc truy cập kiểu dữ liệu Enum được lồng trong kiểu dữ liệu tham chiếu  
+=> phải đi từ  class parent (nếu có  namespace đi từ  namespace) vào đến class muốn truy cập hoặc kiểu dữ liệu enum muốn truy cập   và chú  ý   static void Main(string[] args)
+nó là trung tâm đầu não  gọi  mọi thứ miễn là nằm trong class nên bỏ nó vào class riêng có cấp  bậc cao  nhất   
+ 
+
+    public class SinhVien
+    {
+
+        public int age;
+        public int point;
+
+
+        public class GroupA {
+            public string name;
+
+        }
+       
+        public class GroupB {
+            public string name;
+
+        }
+
+
+    
+    static void Main(string[] args)
+        {
+           SinhVien  sv = new SinhVien();
+
+            sv.age = 18;
+            Console.WriteLine(sv.age);
+
+
+        }
+    }
+
+
+
+namespace  là  gì  ?  
+namespace = cái hộp / thư mục logic trong code, giúp quản lý, phân loại, và tránh trùng tên class.
+
+
+
+Một namespace có thể nằm ở nhiều file khác nhau.
+
+📌 Ví dụ:
+
+📂 Project của bạn có 2 file:
+
+📄 PlayerMovement.cs
+
+namespace MyGame.Player
+{
+    public class PlayerMovement
+    {
+        public void Move()
+        {
+            Console.WriteLine("Player is moving!");
+        }
+    }
+}
+
+
+📄 PlayerAttack.cs
+
+namespace MyGame.Player
+{
+    public class PlayerAttack
+    {
+        public void Attack()
+        {
+            Console.WriteLine("Player is attacking!");
+        }
+    }
+}
+
+
+👉 Cả 2 class PlayerMovement và PlayerAttack đều thuộc namespace MyGame.Player, dù chúng nằm ở 2 file khác nhau.
+
+
+
+

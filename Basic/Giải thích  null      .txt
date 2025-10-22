@@ -1,0 +1,42 @@
+Giải thích  null    :     null = không tồn tại giá trị, không tham chiếu đến đối tượng nào.
+
+
+I >  kiểu dữ liệu là  thuộc tính [fiel / property]  : thì IDE sẽ tự động gán giá trị mặc định cho thuộc tính [fiel /  property] và Grogrammer ko cần làm việc đo  
+
+ *   thuộc tính   [fiel /  property]    nếu   khai báo  không  gán  giá trị  thì   IDE  sẽ tự động gán NULL cho thuộc tính   [fiel /  property]
+* thực chất  kiểu dữ liệu tham  chiếu  IDE tự động  gán  Null   . còn nguyên thủy (long long ,  double  , float ,  int )  IDE tự động  gán  0 ,boolean IDE tự đông gán false  nên vậy muốn   
+   
+
+ public class SinhVien {
+    public  int a { get; set; }   //   a  =  0    ||      public   int ?   a   {get;set;}   a = null 
+}  
+
+         
+
+
+ II > Kiểu  dữ liệu  trong Local  thì  grogrammer  phải tự chủ động  gán giá trị bắt buộc 
+  1 String  a  =  null;    int a = null  ,int  a =  3; ...... 
+
+ =>   Kiểu dự  liệu tham chiếu  có thể gán Null   nhưng kiểu dữ liệu  nguyên  thủy không thể gán NULL   nhưng để  muốn  Kiểu dự  liệu tham chiếu , và nguyên thủy đều có thể gán Null
+thì sử dụng cấu trúc  
+
+   Cấu trúc  :   [ Kiểu  dữ liệu  ?  Tên  biên    ]    <==>  Kiểu dữ liệu  ?a  <==>    Tức là  kiểu dữ liệu này có  thể gán = null    
+
+
+ 
+VD :  
+
+  2.   int ? a = null;
+
+if  (a .HasValue)   //  kiểm  tra  a  có  tồn tại giá trị  ko 
+ {
+      Console.WriteLine(a.Value);
+ }
+ else    //   a không  tồn  tại giá trị  a  = null  
+ {
+       Console.WriteLine("a is null");  
+ }
+
+
+
+
