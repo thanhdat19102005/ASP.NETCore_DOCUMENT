@@ -1,6 +1,6 @@
 giải thích  ?.   
 
-=>   Kiểm tra [ biến kiểu dữ liệu]   đó  có  đang bị Null không nếu không null mới truy cập  còn nếu  null  thì  không truy cập vì vậy sẽ không lỗi   
+=>   Kiểm tra đối tượng [ biến kiểu dữ liệu]   đó  có  đang bị Null không nếu không null mới truy cập (phương thức /  thuộc tính)  còn nếu  null  thì  không truy cập vì vậy sẽ không lỗi   
 
 VD     event   EnventHandler    action    =  null     =>   action  ?.  Invoke ()   //  kiểm tra action có  bị null  không  
  
