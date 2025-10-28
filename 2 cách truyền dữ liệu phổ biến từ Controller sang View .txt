@@ -44,7 +44,20 @@ public IActionResult Index()
     <div class="alert alert-success">@TempData["Success"]</div>
 }
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
+🧩 1️⃣ “Request” là gì?
+👉 Khi bạn truy cập một trang web (ví dụ):
+https://mysite.com/Product/Index
+
+
+Trình duyệt (client) gửi một yêu cầu đến server.
+
+Server xử lý yêu cầu đó trong một lần chạy (một request).
+
+Sau khi trả về HTML, request đó kết thúc.
+
+➡️ Mỗi lần bạn tải lại trang, nhấn link, hay Redirect là một request mới.
 
 
 
