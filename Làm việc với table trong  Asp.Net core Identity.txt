@@ -5,3 +5,27 @@ AspNetUsers và việc quản lí  User trực tiếp  (tạo/sửa/xóa User)  
 AspNetRoles và việc quản lý role trực tiếp (tạo/sửa/xóa role) thuộc về RoleManager<IdentityRole>  _roleManager
 
 SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNetUser dùng để xác thực Login và  Logout
+
+
+
+
+
+    public class AppUserModel : IdentityUser {
+     
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+          IQueryable<T>  or IEnumerable<T>    <==>  List <T>  
+
+
+
+  Note  : DbSet<T> Users     <=>   IQueryable<T>.
+            
+
+          UserManager<T> _userManager  ,   _userManager.Users  <=>   IQueryable<T>....
+
+          T phải là Class kế thừa từ  IdentityUser  
+
+
