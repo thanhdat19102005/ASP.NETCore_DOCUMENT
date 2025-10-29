@@ -1,0 +1,7 @@
+
+
+AspNetUsers và việc quản lí  User trực tiếp  (tạo/sửa/xóa User)  thuộc  về UserManager<AppUserModel> _userManager  
+
+AspNetRoles và việc quản lý role trực tiếp (tạo/sửa/xóa role) thuộc về RoleManager<IdentityRole>  _roleManager
+
+SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNetUser dùng để xác thực Login và  Logout
