@@ -8,24 +8,26 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
 
 
 
-
-
     public class AppUserModel : IdentityUser {
      
     }
 }
 
-----------------------------------------------------------------------------------------------------------------------------------------------------
+Note :  Mỗi Models muốn Mapping và trở thành Table của Db  thì bỏ vào trong DbContext nhưng   Identity ứng với Table AspNetUsers thì không cần cỏ vào DbContext      
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
           IQueryable<T>  or IEnumerable<T>    <==>  List <T>  
-
-
-
-  Note  : DbSet<T> Users     <=>   IQueryable<T>.
+  
+         Note  : DbSet<T> Users     <=>   IQueryable<T>.
             
 
           UserManager<T> _userManager  ,   _userManager.Users  <=>   IQueryable<T>....
-
+         Ex :  UserManager<AppUserModel> _userManager    ,   _userManager.Users    <=>    IQueryable<AppUserModel>
+    
           T phải là Class kế thừa từ  IdentityUser  
+
+
+
 
 
