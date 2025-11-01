@@ -1,0 +1,7 @@
+
+string  result ="sfsfsdfsd"
+string.IsNullOrEmpty(result)  trả về  true or false 
+
+
+
+    
