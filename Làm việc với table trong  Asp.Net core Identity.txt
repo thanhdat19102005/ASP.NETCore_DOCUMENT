@@ -2,6 +2,8 @@
 
 AspNetUsers và việc quản lí  User trực tiếp  (tạo/sửa/xóa User)  thuộc  về UserManager<AppUserModel> _userManager  
 
+AspNetUserRoles và việc quản lí User-Role (Tạo ,  xóa) thuộc về  UserManager<AppUserModel> _userManager
+
 AspNetRoles và việc quản lý role trực tiếp (tạo/sửa/xóa role) thuộc về RoleManager<IdentityRole>  _roleManager
 
 SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNetUser dùng để xác thực Login và  Logout
@@ -12,10 +14,17 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
      
     }
 }
-
+ AspNetUsers:
 +dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update()  
-+dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync
++dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync 
 
+AspNetRoles:
++dùng để Create, Update  , Delete  thì  _roleManager.Create () ,  _roleManager.Remove ()  ,   _roleManager.Update()  
++dùng Read cả  Table  _roleManager.Users   dùng Read 1 phần từ trong Table _roleManager.FindByIdAsync 
+
+ AspNetUserRoles
+  var createUser  //  user của bảng AspNetUser  và  var createRole   // roles của bảng AspNetRoles  
++  dùng để Create  : var addToRoleResult  =   await  _userManager.AddToRoleAsync(createUser, createRole.Name);
 
 Note :  Mỗi Models muốn Mapping và trở thành Table của Db  thì bỏ vào trong DbContext nhưng   IdentityUser Mapping vs Db và ứng với Table AspNetUsers thì không cần cỏ vào DbContext      
 
