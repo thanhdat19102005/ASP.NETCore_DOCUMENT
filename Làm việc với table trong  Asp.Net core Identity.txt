@@ -16,13 +16,13 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
 }
  AspNetUsers:
 +dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update()  
-+dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync 
++dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync()
 
 
 
 AspNetRoles:
 +dùng để Create, Update  , Delete  thì  _roleManager.Create () ,  _roleManager.Remove ()  ,   _roleManager.Update()  
-+dùng Read cả  Table  _roleManager.Users   dùng Read 1 phần từ trong Table _roleManager.FindByIdAsync 
++dùng Read cả  Table  _roleManager.Roles  dùng Read 1 phần từ trong Table _roleManager.FindByIdAsync()
 
 
 
@@ -31,11 +31,9 @@ AspNetRoles:
 +  cấu trúc  public virtual Task<IdentityResult> AddToRoleAsync(TUser user (1 bản ghi của table AspNetUsers), string roleName (cột của table AspNetRoles))
 + cấu trúc  public virtual Task<IdentityResult> RemoveFromRoleAsync(TUser user (1 bản ghi của table AspNetUsers), string roleName (cột của table AspNetRoles))
 
-
    var createUser  //  user của bảng AspNetUser  và  var createRole   // roles của bảng AspNetRoles  
 +  dùng để Create  : var addToRoleResult  =   await  _userManager.AddToRoleAsync(createUser, createRole.Name);
 + dùng Remove   :   var removeToRoleResult  = await _userManager.RemoveFromRoleAsync(createUser, createRole.Name);
-
 
 +  Table  AspNetUserRoles   [UserId  , RoleId]   = (UserId = createUser(tự động lấy ra createUser.Id), RoleId = <Id của createRole có Name=createRole.Name>)
 
