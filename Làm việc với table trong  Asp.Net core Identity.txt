@@ -56,3 +56,12 @@ Note :  Mỗi Models muốn Mapping và trở thành Table của Db  thì bỏ v
 
 
 
+
+Tóm lại :  DataContext sử dụng  cho  các  Table  không  phải là AspNet core Identity còn các Table là AspNet core Identity sử dụng _userManager , _roleManager
+
+         DataContext dùng cho cả hai khi Query Table ,  Include chỉ dùng cho Class trong Models có  Navigation 
+
+
+
+
+

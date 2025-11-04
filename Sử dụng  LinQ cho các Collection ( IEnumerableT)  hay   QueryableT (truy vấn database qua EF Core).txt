@@ -2,7 +2,9 @@ Sử dụng  LinQ cho các Collection ( IEnumerable<T>)  hay   Queryable<T> (tru
 
 giải thích    IEnumerable<T>  và   Queryable<T>  và  LINQ  : 
 
-LINQ  :  giống như viết SQL nhưng với cú pháp của C#. và có thể kết hợp với điều kiện  lamda  ví   list <int >   contain  = {2,3,2,4}; IEnumerable<int> =  contain.FirstOrDefault (n =>n>2)   
+LINQ  :  LINQ là “ngôn ngữ truy vấn dữ liệu tích hợp trong C#”,
+cho phép bạn thao tác dữ liệu (lọc, nhóm, sắp xếp, join…)
+trực tiếp bằng cú pháp C#, thay cho SQL thủ công.
 
 IEnumerable<T> 👉   tập hợp chứa các phần tử T thật sự trong bộ nhớ.Thường dùng khi dữ liệu đã nằm trong bộ nhớ (RAM) .Lọc, sắp xếp, tính toán… đều làm sau khi data được load về RAM. =>     Load  ở  Ram 
 
