@@ -1,0 +1,34 @@
+Decimal : biểu diễn được dưới dạng thập phân và dưới dạng số  nguyên được dùng trong tiền tệ , thống kế vì sai số ít  
+
+Dễ hiểu nhất: double là số thực nhị phân 64-bit, còn decimal là số thực thập phân 128-bit. Vì “cơ số” khác nhau nên hành vi rất khác trong thực tế.
+
+Vì sao tiền tệ nên dùng decimal?
+
+Số thập phân “đẹp” như 0.1, 0.2 không biểu diễn chính xác ở cơ số 2 ⇒ double dễ sinh sai số lẻ.
+
+double  x = 0.1 + 0.2;        // 0.30000000000000004
+bool bx = (x == 0.3);         // false
+
+decimal y = 0.1m + 0.2m;      // 0.3m
+bool by = (y == 0.3m);        // true
+
+Literal & ép kiểu
+decimal a = 4m;      // hậu tố m/M để tạo literal decimal
+// decimal b = 4.0;  // ❌ 4.0 là double, không chuyển ngầm định sang decimal
+decimal b = (decimal)4.0; // ✅ ép kiểu rõ ràng
+
+double  d = 4.0;     // literal mặc định cho số có dấu chấm là double
+
+So sánh & trộn kiểu
+
+int,long → decimal: chuyển ngầm định (OK).
+
+double/float ↔ decimal: không ngầm định ⇒ phải ép kiểu, và coi chừng sai số của double.
+
+Với tiền, hãy giữ dữ liệu toàn bộ ở decimal từ input → xử lý → lưu DB.
+
+
+
+
+
+
