@@ -17,13 +17,15 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
  AspNetUsers:
 +dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update()  
 +dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync()
-
++Nếu xóa 1 bản ghi AspNetUser thì nó sẽ cũng tự động xóa bảng ghi AspNetUserRoles thông qua khóa chính và khóa ngoại      
 
 
 AspNetRoles:
 +dùng để Create, Update  , Delete  thì  _roleManager.Create () ,  _roleManager.Remove ()  ,   _roleManager.Update()  
 +dùng Read cả  Table  _roleManager.Roles  dùng Read 1 phần từ trong Table _roleManager.FindByIdAsync()
++ Nếu xóa 1 bản ghi AspNetRoles thì nó sẽ cũng tự động xóa bảng ghi AspNetUserRoles thông qua khóa chính và khóa ngoại      
 
+ 
 
 
  AspNetUserRoles
