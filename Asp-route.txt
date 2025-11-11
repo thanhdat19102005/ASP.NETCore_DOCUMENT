@@ -1,0 +1,47 @@
++   Asp-route-Slug   
+public IActionResult Detail(string Slug) { ... }
+
+<a asp-controller="Products"
+   asp-action="Detail"
+   asp-route-slug="macbook-pro-14">
+  Xem chi tiết
+</a>
+
+
+
+
+
++   Asp-route-Id
+public IActionResult Detail(int Id) { ... }
+
+<a asp-controller="Products"
+   asp-action="Detail"
+   asp-route-id="42">
+  Xem sản phẩm #42
+</a>
+
+
+
+
+
++ Asp-route-orderCode
+public IActionResult Track(string orderCode) { ... }
+
+<a asp-controller="Orders"
+   asp-action="Track"
+   asp-route-orderCode="DH-2025-0001">
+  Tra cứu đơn DH-2025-0001
+</a>
+
+
+
+
+
++asp-route-pg
+public IActionResult Index(int pg) { ... }
+
+<a asp-controller="Products"
+   asp-action="Index"
+   asp-route-pg="3">
+  Trang 3
+</a>
