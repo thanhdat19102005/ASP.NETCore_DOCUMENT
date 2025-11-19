@@ -1,0 +1,41 @@
+<select class="form-control" id="Status">
+    <option value="1">Đơn hàng mới</option>
+    <option value="0">Đã xử lý</option>
+</select>
+
+
+-------------------------------------------------------------
+
+<input type="hidden" class="getId" value="1" />
+
+--------------------------------------------------------------
+
+<button type="button"
+        id="btnSave"
+        class="btn btn-primary"
+        value="5">
+    Lưu
+</button>
+
+---------------------------------------------------------------
+
+
+ <Script>    
+var selectVal = $('#Status').val();  // Nó sẽ lấy value của option đang được chọn trong  Select
+var inputVal   = $('.getId').val(); //  Nó  sẽ  lấy value của Input 
+var  buttonVal = $('#btnSave').val();   // Lấy value  button 
+
+ </Script>   
+
+
+
+
+
+
+
+
+
+
+
+
+
