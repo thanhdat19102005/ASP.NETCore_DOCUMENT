@@ -1,4 +1,4 @@
-<select class="form-control" id="Status">
+<select class="form-control" Class="Status">
     <option value="1">Đơn hàng mới</option>
     <option value="0">Đã xử lý</option>
 </select>
@@ -11,7 +11,7 @@
 --------------------------------------------------------------
 
 <button type="button"
-        id="btnSave"
+        Class="btnSave"
         class="btn btn-primary"
         value="5">
     Lưu
@@ -21,9 +21,11 @@
 
 
  <Script>    
-var selectVal = $('#Status').val();  // Nó sẽ lấy value của option đang được chọn trong  Select
+var selectVal = $('.Status').val();  // Nó sẽ lấy value của option đang được chọn trong  Select
 var inputVal   = $('.getId').val(); //  Nó  sẽ  lấy value của Input 
-var  buttonVal = $('#btnSave').val();   // Lấy value  button 
+var  buttonVal = $('.btnSave').val();   // Lấy value  button 
+
+
 
  </Script>   
 
