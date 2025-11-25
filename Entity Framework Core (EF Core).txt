@@ -1,0 +1,9 @@
+🏗️ Chức Năng Chính
+EF Core thực hiện ánh xạ (mapping) giữa các đối tượng (objects/classes) trong code C# của bạn và các bảng (tables) trong cơ sở dữ liệu.
+
+
+Trong C# (Code),Ánh xạ tới,Trong Database (SQL)
+Class (Product),⟺,Table (Products)
+Property (p.Name),⟺,Column (Name)
+Objects (một Product cụ thể),⟺,Row (một bản ghi)
+LINQ Queries (.Where()),⟺,"SQL Commands (SELECT, WHERE)"
