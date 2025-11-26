@@ -1,0 +1,6 @@
+ decimal a = 232534543.90m;
+ string val = a.ToString("#,##0 VND");
+
+
+
+in ra :  232,534,544 VND
