@@ -1,0 +1,28 @@
+tắt hoàn toàn tính năng Nullable Reference Types (NRT), bạn chỉ cần chỉnh sửa giá trị của thuộc tính <Nullable> từ enable thành disable trong file .csproj của bạn.
+
+Dưới đây là cách sửa lại file:
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  
+  </Project>
+
+Hệ thống ASP.NET Core sẽ không còn tự động áp dụng ràng buộc [Required] cho các thuộc tính public string Name { get; set; } nữa.
+
+Nếu bạn muốn một trường nào đó là bắt buộc (ví dụ: Name), bạn phải tự thêm Data Annotation [Required] vào Model.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+ModelState.IsValid  kiểm  tra  định dạng  các property  như [Range] ,[Required] ,  [Email], [Phone] , [CustomValidation],[Url]  
+
+2. 📝 Kiểm tra Lỗi Chuyển đổi Kiểu dữ liệu
+Kiểm tra xem dữ liệu thô (dạng chuỗi) nhận được từ Form có thể được chuyển đổi thành kiểu dữ liệu tương ứng trong Model hay không:
+
+Nếu bạn có thuộc tính public int Age { get; set; } nhưng người dùng nhập vào chuỗi "abc", Model Binder sẽ thất bại khi chuyển đổi, và lỗi sẽ được thêm vào ModelState, khiến ModelState.IsValid là false. 
