@@ -1,0 +1,128 @@
+var wishlists = _dataContext.Wishlists
+    .Include(x => x.Product)
+    .Include(x => x.User)
+    .GroupBy(x => new { x.UserId, x.ProductId })
+    .Select(g => g.OrderBy(x => x.Id).First())  or .Select(g => g.First())
+    .ToList();
+
+
+
+Explain in Detail  :  
+
+
+1️⃣ _dataContext.Wishlists
+
+👉 Lấy bảng Wishlists trong database
+
+2️⃣ .Include(x => x.Product)
+
+👉 Nói với EF:
+
+“Lấy thêm thông tin Product liên quan”
+
+➡️ Nếu không có dòng này:
+
+item.Product trong View sẽ null
+
+3️⃣ .Include(x => x.User)
+
+👉 Nói với EF:
+
+“Lấy thêm thông tin User liên quan”
+
+
+5️⃣ .GroupBy(x => new { x.UserId, x.ProductId })
+
+👉 GOM NHÓM
+
+Nếu UserId giống nhau
+
+VÀ ProductId giống nhau
+➡️ thì gom lại 1 nhóm
+
+📦 Ví dụ:
+
+(User A, Product 2017) → 1 nhóm
+(User A, Product 2017) → cùng nhóm
+
+6️⃣ .Select(g => g.OrderBy(x => x.Id).First())
+
+👉 CHỌN 1 DÒNG ĐẠI DIỆN CHO MỖI NHÓM
+
+g = 1 nhóm wishlist
+
+OrderBy(x => x.Id):
+
+sắp xếp theo Id tăng dần
+
+First():
+
+lấy dòng đầu tiên
+
+📌 Nghĩa là:
+
+Nếu bị trùng, giữ dòng được thêm sớm nhất
+
+7️⃣ .ToList()
+
+👉 Thực thi query
+👉 Trả về List<WishlistModel>
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+PHÂN TÍCH TỪNG BƯỚC
+1️⃣ Include(...)
+
+👉 Load thêm:
+
+Thông tin Product
+
+Thông tin User
+
+(chưa lọc gì cả)
+
+2️⃣ GroupBy(x => new { x.UserId, x.ProductId })
+
+👉 Gom dữ liệu theo cặp (UserId, ProductId)
+
+Kết quả nhóm:
+
+Nhóm	UserId	ProductId	Các Id
+1	A	1012	          [1]
+2	B	2016	          [2]
+3	A	1002	          [3]
+4	C	2017	          [4, 5]
+3️⃣ Select(g => g.OrderBy(x => x.Id).First())
+
+👉 Mỗi nhóm:
+
+Sắp xếp theo Id tăng dần
+
+Lấy dòng đầu tiên
+
+Kết quả sau Select:
+
+Id	UserId	ProductId
+1	A	1012
+2	B	2016
+3	A	1002
+4	C	2017
+
+➡️ Id = 5 bị loại bỏ (vì trùng với Id = 4)
+
+4️⃣ .ToList()
+
+👉 Thực thi query
+👉 Trả về danh sách cuối cùng
+
+✅ KẾT QUẢ CUỐI CÙNG wishlists
+Id	UserId	ProductId
+1	A	1012
+2	B	2016
+3	A	1002
+4	C	2017
+
+🎯 Mỗi cặp (UserId, ProductId) chỉ còn 1 dòng
+
+
