@@ -1,6 +1,7 @@
  decimal a = 232534543.90m;
- string val = a.ToString("#,##0 VND");
+c1: string val = a.ToString("#,##0 VND");
+c2 : string val   = a.ToString("N0", new System.Globalization.CultureInfo("vi-VN")); 
 
 
-
-in ra :  232,534,544 VND
+in ra c1 :  232,534,544 VND
+      c2 : 232.534.544 VND
