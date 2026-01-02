@@ -15,8 +15,17 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
     }
 }
  *** AspNetUsers:
-+dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update()  
-+dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync()
++dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update(),
+Cập nhật lại PasswordHash của AppUserModel trong AspNetUsers :
+
+ _userManage.RemovePasswordAsync(checkEmail); // var checkEmail là user của bảng AspNetUser được tìm kiếm theo Email
+ _userManage.AddPasswordAsync(checkEmail, password); // gán password vào đối tượng checkEmail lúc này password sẽ được mã hóa từ abc@123 thành
+AQAAAl9f0qiBBjQlJ0+0Iyw==
+ _userManage.UpdateAsync(checkEmail);  //cập nhật lại
+
+
+  
++dùng Read cả  Table  _userManager.Users   dùng Read 1 phần từ trong Table _userManager.FindByIdAsync() or _userManager.FindByEmailAsync()
 +Nếu xóa 1 bản ghi AspNetUser thì nó sẽ cũng tự động xóa bảng ghi AspNetUserRoles thông qua khóa chính và khóa ngoại      
 
 
@@ -46,6 +55,8 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
 
 Note :  Mỗi Models muốn Mapping và trở thành Table của Db  thì bỏ vào trong DbContext nhưng   IdentityUser Mapping vs Db và ứng với Table AspNetUsers thì không cần cỏ vào DbContext      
 
+
+      - Không  cần SaveChange()  khi  dùng CRUD cho AspNetUsers ,  AspNetRoles ,AspNetUserRoles
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
           IQueryable<T>  or IEnumerable<T>    <==>  List <T>  
