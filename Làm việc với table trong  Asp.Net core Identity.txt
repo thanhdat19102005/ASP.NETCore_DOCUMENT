@@ -18,7 +18,7 @@ SignInManager<AppUserModel> _signInManager làm việc chính với bảng AspNe
 +dùng để Create, Update  , Delete  thì  _userManager.Create () ,  _userManager.Remove ()  ,   __userManager.Update(),
 Cập nhật lại PasswordHash của AppUserModel trong AspNetUsers :
 
- _userManage.RemovePasswordAsync(checkEmail); // var checkEmail là user của bảng AspNetUser được tìm kiếm theo Email
+ _userManage.RemovePasswordAsync(checkEmail); // var checkEmail là user của bảng AspNetUser được tìm kiếm theo Email và  xóa Password của checkEmail
  _userManage.AddPasswordAsync(checkEmail, password); // gán password vào đối tượng checkEmail lúc này password sẽ được mã hóa từ abc@123 thành
 AQAAAl9f0qiBBjQlJ0+0Iyw==
  _userManage.UpdateAsync(checkEmail);  //cập nhật lại
