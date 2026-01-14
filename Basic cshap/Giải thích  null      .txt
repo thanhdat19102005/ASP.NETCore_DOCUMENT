@@ -15,7 +15,7 @@ I >  kiểu dữ liệu là  thuộc tính [fiel / property]  : thì IDE sẽ t�
 
 
  II > Kiểu  dữ liệu  trong Local  thì  grogrammer  phải tự chủ động  gán giá trị bắt buộc 
-  1 String  a  =  null;    int a = null  ,int  a =  3; ...... 
+  1 String  a  =  null;    int ? a = null  ,int  a =  3; ...... 
 
  =>   Kiểu dự  liệu tham chiếu  có thể gán Null   nhưng kiểu dữ liệu  nguyên  thủy không thể gán NULL   nhưng để  muốn  Kiểu dự  liệu tham chiếu , và nguyên thủy đều có thể gán Null
 thì sử dụng cấu trúc  
