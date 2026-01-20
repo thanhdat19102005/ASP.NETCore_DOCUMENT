@@ -1,0 +1,64 @@
+Class   :   khi cấp phát thì sẽ tạo thành đối tượng, đối tượng đó sẽ có instance  
+
+ 
+
+public class Animal   {
+
+public  string name   { get   ;set ;} 
+
+public int age     {get ;set;}
+
+
+}   
+
+
+*** Animal  a  =  new  Animal   ()  ;    //  a có  instance  
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------'
+
+Static  Class  :  không có instance  
+
+public static class Animal   {
+
+public static string name   { get   ;set ;} 
+
+public  static int age     {get ;set;}
+
+
+}   
+
+***  muốn truy cập  phương thức hay thuộc tính Syntax  :  Class.phương thức/thuộc tính 
+
+
+ví dụ string name  =  Animal.name ;
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
