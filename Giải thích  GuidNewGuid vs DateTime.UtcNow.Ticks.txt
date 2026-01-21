@@ -1,0 +1,51 @@
+var  random   = Guid.NewGuid().ToString   ( ) ;
+=>  .NET sẽ bốc ra ngẫu nhiên 1 giá trị 128 bit chưa từng xuất hiện (xác suất trùng = gần như 0).
+=>   gần như tạo ra những   dãy số không bao giờ trùng  nhau  
+
+|--- Thời gian hiện tại ---|--- Số ngẫu nhiên ---|--- Địa chỉ MAC của máy ---|
+👉 Mỗi lần bạn gọi Guid.NewGuid():
+
+Thời gian: lấy từ đồng hồ máy tính (chính xác đến 100 nano giây)
+
+Số ngẫu nhiên: thêm vài bit random
+
+Địa chỉ MAC: là địa chỉ mạng độc nhất của máy tính
+
+➡️ Tổng hợp 3 thứ này lại → tạo ra 1 “vân tay” duy nhất cho GUID.
+
+
+  
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+string id1 = Guid.NewGuid().ToString();
+string id2 = DateTime.UtcNow.Ticks.ToString();
+
+thì:
+
+DateTime.UtcNow.Ticks có khả năng trùng cao hơn Guid.NewGuid() rất nhiều.
+
+Lý do:
+
+DateTime.UtcNow.Ticks
+Dựa vào thời gian
+
+Nếu hai lệnh chạy cùng thời điểm rất sát nhau (cùng tick)
+
+Hoặc hệ thống xử lý song song nhiều request
+→ Có khả năng trùng
+
+Nó gần như không trùng trong app nhỏ, nhưng không được thiết kế để đảm bảo “unique tuyệt đối”.
+
+Guid.NewGuid()
+Được thiết kế chuyên để tạo ID duy nhất
+
+Không phụ thuộc vào thời gian
+
+Xác suất trùng là cực kỳ nhỏ (gần như bằng 0 trong thực tế)
+
+GUID là 128-bit, số lượng khả năng là:
+
+2^128 ≈ 3.4 × 10^38
+Nên dù tạo hàng tỷ ID mỗi giây, trong hàng triệu năm, khả năng trùng vẫn gần như không xảy ra.
