@@ -39,15 +39,30 @@ AQAAAl9f0qiBBjQlJ0+0Iyw==
 
 
 *** AspNetUserRoles
+
+UserId + RoleId = PRIMARY KEY
+
+Nghĩa là cặp này phải duy nhất.
+
+Không thể có 2 bản ghi (1,1) giống nhau.
+
+
   
 +  cấu trúc  public virtual Task<IdentityResult> AddToRoleAsync(TUser user (1 bản ghi của table AspNetUsers), string roleName (cột của table AspNetRoles))
 + cấu trúc  public virtual Task<IdentityResult> RemoveFromRoleAsync(TUser user (1 bản ghi của table AspNetUsers), string roleName (cột của table AspNetRoles))
++ cấu trúc public virtual Task<bool> IsInRoleAsync(TUser user(1 bản ghi của table AspNetUsers), string roleName (cột của table AspNetRoles))
+
+
 
    var createUser  //  user của bảng AspNetUser  và  var createRole   // roles của bảng AspNetRoles  
 +  dùng để Create  : var addToRoleResult  =   await  _userManager.AddToRoleAsync(createUser, createRole.Name);
 + dùng Remove   :   var removeToRoleResult  = await _userManager.RemoveFromRoleAsync(createUser, createRole.Name);
++ dùng Exist    :   bool alreadyInRole = await _userManager.IsInRoleAsync(createUser, createRole.Name);   dùng kiểm tra  cái hàng  này có tồn tại trong AspNetUserRoles chưa trả về true tồn tại còn false thì chưa tồn tại 
 
-+  Table  AspNetUserRoles   [UserId  , RoleId]   = (UserId = createUser(tự động lấy ra createUser.Id), RoleId = <Id của createRole có Name=createRole.Name>)
+
+
+
++  Table  AspNetUserRoles   [UserId  , RoleId]   = (UserId = createUser(tự động lấy ra createUser.Id), RoleId =  createRole (có Name=createRole.Name))
 
 + Kiểm tra xem addToRoleResult đó đã có bản ghi đó chưa (dựa trên AspNetUserRoles) ,Nếu chưa có → thêm 1 bản  mới vào bảng AspNetUserRoles , Nếu đã có rồi → không thêm nữa và trả về kết quả “addToRoleResult.Succeeded ==  True” (không lỗi).
 
