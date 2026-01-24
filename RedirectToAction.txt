@@ -1,6 +1,27 @@
   
 (Action, Controller, RouteValues)
 1 . RedirectToAction("Index"  ,"Cart") :  nghĩa là   di chuyển tới  action = Index và  Controller =  Cart  
-2.  RedirectToAction("Index")    :  không cần ghi Controller   vì  asp.net mvc  tự động điện  dựa vào  Controller đang chứa đoạn mã này      
+
+2  RedirectToAction(
+    "Checkout",
+    "Checkout",
+    new
+    {
+        orderId = momoResult.OrderId,
+        paymentType = "MOMO"
+    }
+);
+
+:  nghĩa là di chuyển tới  action = Index và  Controller =  Cart  và  có 2 tham số  orderId ,  paymentType
+
+public async Task<IActionResult> Checkout(string orderId, string paymentType)
+
+
+
+
+ 
+
+
+3.  RedirectToAction("Index")    :  không cần ghi Controller   vì  asp.net mvc  tự động điện  dựa vào  Controller đang chứa đoạn mã này      
 
 
