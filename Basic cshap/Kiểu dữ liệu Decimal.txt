@@ -1,4 +1,4 @@
-Decimal : biểu diễn được dưới dạng thập phân và dưới dạng số  nguyên được dùng trong tiền tệ , thống kế vì sai số ít  
+Decimal : biểu diễn được dưới dạng thập phân (thêm m) và dưới dạng số  nguyên (ko cần thêm m) được dùng trong tiền tệ , thống kế vì sai số ít  
 
 Dễ hiểu nhất: double là số thực nhị phân 64-bit, còn decimal là số thực thập phân 128-bit. Vì “cơ số” khác nhau nên hành vi rất khác trong thực tế.
 
@@ -23,7 +23,7 @@ So sánh & trộn kiểu
 
 int,long → decimal: chuyển ngầm định (OK).
 
-double/float ↔ decimal: không ngầm định ⇒ phải ép kiểu, và coi chừng sai số của double.
+double/float → decimal: không ngầm định ⇒ phải ép kiểu bằng cách  thêm  m đằng sau decimal .
 
 Với tiền, hãy giữ dữ liệu toàn bộ ở decimal từ input → xử lý → lưu DB.
 
