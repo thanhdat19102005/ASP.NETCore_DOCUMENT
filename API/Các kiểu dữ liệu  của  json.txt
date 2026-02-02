@@ -1,0 +1,128 @@
+1️⃣ String (chuỗi)
+
+👉 Văn bản, phải để trong dấu ngoặc kép " "
+
+{
+  "name": "Dat",
+  "city": "Ha Noi"
+}
+
+
+2️⃣ Number (số float , double  , integer , long)
+
+{
+  "age": 18,
+  "price": 99.5
+}
+
+
+3️⃣ Boolean (đúng / sai)
+
+👉 Chỉ có true hoặc false (viết thường)
+
+{
+  "depositpaid": true
+}
+
+
+4️⃣ Object (đối tượng)
+
+👉 Cặp key – value, nằm trong { }
+
+{
+  "bookingdates": {
+    "checkin": "2018-01-01",
+    "checkout": "2019-01-01"
+  }
+}
+
+5️⃣ Array (mảng / danh sách)
+
+👉 Danh sách phần tử, nằm trong [ ]
+
+{
+  "bookingids": [
+    { "bookingid": 1 },
+    { "bookingid": 2 }
+  ]
+}
+
+6️⃣ Null (rỗng)
+
+👉 Không có giá trị
+
+{
+  "additionalneeds": null
+}
+
+
+
+
+
+
+
+
+Note: nếu có kiểu dữ liệu Date trong json  thì  json sẽ tự động   convert  kiểu dữ liệu Date thành kiểu dữ liệu string  
+
+public class Booking
+{
+    public string FirstName { get; set; }
+    public DateTime CheckIn { get; set; }
+    public DateTime CheckOut { get; set; }
+}
+
+using System;
+using System.Text.Json;
+
+var booking = new Booking
+{
+    FirstName = "Dat",
+    CheckIn = new DateTime(2026, 2, 1),
+    CheckOut = new DateTime(2026, 2, 5)
+};
+
+
+ Chuyển object C# → JSON
+string json = JsonSerializer.Serialize(booking);  
+Console.WriteLine(json);
+
+
+
+ Kết quả JSON in ra 👇
+{
+  "FirstName": "Dat",
+  "CheckIn": "2026-02-01T00:00:00",
+  "CheckOut": "2026-02-05T00:00:00"
+}
+
+
+
+Note  :
+
+Khi bạn serialize object C# sang JSON, thư viện sẽ tự động:
+
+Nhìn thấy DateTime
+
+Chuyển DateTime → string (định dạng ISO 8601)
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Newtonsoft.Json (JsonConvert.DeserializeObject<Object >(json)) chỉ tự động convert khi việc convert “an toàn”, tức là không làm mất dữ liệu gốc (json value).Nếu convert mà có khả năng làm mất giá trị hoặc gây sai lệch  (json value), nó sẽ ném lỗi thay vì tự động convert.
+
+
+
+Ví dụ minh họa:
+JSON value	Class type	Kết quả	                     Giải thích
+"23"	          int	       ✅ 23	                     Số nguyên → int, không mất dữ liệu
+"23.7"	          double       ✅ 23.7	                     String chứa số → double, chính xác
+"23.7"	          int	       ❌ Lỗi	                     Số thập phân → int, mất phần thập phân
+23.7	          int	       ❌ Lỗi	                     double → int, mất phần thập phân
+23.7	         string	      ✅ "23.7"	                      Bất kỳ giá trị nào cũng convert → string an toàn
+
+
+
