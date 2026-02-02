@@ -25,7 +25,7 @@
            
             Person p =   new Person ();
 
-             var  item = p.Result() ?? new Person();  //      p.Result ()  và new Person()  phải có  cùng  kiểu  dữ liệu  là  Person  
+            Person  item = p.Result() ?? new Person();  //      p.Result ()  và new Person()  phải có  cùng  kiểu  dữ liệu  là  Person  
 
             item.Name  = "Hoang";
             item.Age   =  12;

@@ -52,7 +52,7 @@ OrderByDescending()	           numbers.OrderByDescending(n => n)	Sắp xếp gi�
   
 
   
-Recap  :   IEnumerable<T>  và   Queryable<T>   Có thể  sử dụng lệnh truy vẫn LinQ và  đổi lại thành List  nhờ  TOLIST
+Recap  :   IEnumerable<T>  và   Queryable<T>   Có thể  sử dụng lệnh truy vẫn LinQ và  đổi lại thành List <T>   nhờ  TOLIST
 
 
    
