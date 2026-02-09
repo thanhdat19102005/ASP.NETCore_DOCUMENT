@@ -4,4 +4,8 @@ string.IsNullOrEmpty(result)  trả về  true or false
 
 
 
-    
+Nó trả về:
+
+true → nếu chuỗi null HOẶC rỗng ""
+
+false → nếu chuỗi có giá trị
